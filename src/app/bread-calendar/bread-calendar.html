@@ -1,4 +1,10 @@
 <section class="bl-component">
     <h3>Schedule</h3>
-    <p>bread-calendar works!</p>
+    <ul class="loaf-list">
+        @for (loaf of loaves; track $index) {
+            <li class="loaf-list-item">
+                {{loaf.loafType}} - {{loaf.bakeDate | date:'shortDate'}}
+            </li>
+        }
+    </ul>
 </section>

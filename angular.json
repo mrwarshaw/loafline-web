@@ -26,12 +26,9 @@
             ],
             "styles": ["src/styles.css"],
             "server": "src/main.server.ts",
-            "outputMode": "server",
+            "outputMode": "static",
             "security": {
               "allowedHosts": []
-            },
-            "ssr": {
-              "entry": "src/server.ts"
             }
           },
           "configurations": {
@@ -59,6 +56,9 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "allowedHosts": ["loafline.co", "warshaw.loafline.co"]
+          },
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {

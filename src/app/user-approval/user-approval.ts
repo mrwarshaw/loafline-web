@@ -21,8 +21,12 @@ export class UserApproval {
   }
 
   approveUser(user: User) {
+    this.userService.updateUser({ ...user, approved: true, rejected: false, actionedAt: new Date() });
+    this.unapprovedUsers = this.unapprovedUsers.filter(u => u.id !== user.id);
   }
 
   rejectUser(user: User) {
+    this.userService.updateUser({ ...user, approved: false, rejected: true, actionedAt: new Date() });
+    this.unapprovedUsers = this.unapprovedUsers.filter(u => u.id !== user.id);
   }
 }

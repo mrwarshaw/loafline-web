@@ -4,4 +4,7 @@ export interface User {
     firstName: string;
     lastName: string;
     approved: boolean;
+    requestedAt: Date;
+    rejected: boolean;
+    actionedAt: Date;
 }
