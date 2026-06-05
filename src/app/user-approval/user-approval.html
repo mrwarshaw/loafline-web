@@ -1,1 +1,16 @@
-<p>user-approval works!</p>
+<section class="bl-component">
+<h3>Pending users</h3>
+<ul class="user-list">
+    @for (user of unapprovedUsers; track $index) {
+        <li class="user-list-item">
+            <button class="btn-approve" (click)="approveUser(user)">
+                Approve
+            </button>
+            <button class="btn-approve" (click)="rejectUser(user)">
+                Reject
+            </button>
+            {{user.firstName}} {{user.lastName}} ({{user.email}})
+        </li>
+    }
+</ul>
+</section>

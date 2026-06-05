@@ -5,6 +5,6 @@ export const routes: Routes = [
     {
         path: '',
         component: Home,
-        title: 'Home',
+        title: 'loafline home',
     }
 ];
