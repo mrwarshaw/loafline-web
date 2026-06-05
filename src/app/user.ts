@@ -7,4 +7,6 @@ export interface User {
     requestedAt: Date;
     rejected: boolean;
     actionedAt: Date;
+    isInstanceAdmin: boolean;
+    isGlobalAdmin: boolean;
 }

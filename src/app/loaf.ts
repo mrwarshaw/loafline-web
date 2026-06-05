@@ -3,4 +3,5 @@ export interface Loaf {
     userId: number;
     loafType: string;
     bakeDate: Date;
+    accepted: boolean;
 }

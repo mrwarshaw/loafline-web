@@ -1,1 +1,7 @@
-<app-instance-admin-home />
+@if (authService.isAuthenticated()) {
+    @if (authService.isInstanceAdmin()) {
+         <app-instance-admin-home />
+    } @else {
+        <app-user-home />
+    }
+}

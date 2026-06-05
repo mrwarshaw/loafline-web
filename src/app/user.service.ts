@@ -10,6 +10,12 @@ export class UserService {
   private readonly instance = this.instanceService.getRequestedInstance();
   private url = `http://localhost:3000/${this.instance}-users`;
   
+  async getUserByEmail(email: string) : Promise<User | null> {
+    const data = await fetch(`${this.url}?email=${email}`);
+    const users = await data.json() ?? [];
+    return users.length > 0 ? users[0] : null;
+  }
+
   async getUnapprovedUsers() : Promise<User[]> {
     const data = await fetch(this.url + '?approved=false&rejected=false');
     return (await data.json()) ?? [];
